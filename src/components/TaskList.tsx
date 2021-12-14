@@ -51,7 +51,12 @@ export function TaskList() {
             onChange={(e) => setNewTaskTitle(e.target.value)}
             value={newTaskTitle}
           />
-          <button type="submit" data-testid="add-task-button" onClick={handleCreateNewTask}>
+          <button
+            disabled={!newTaskTitle.length}
+            type="submit"
+            data-testid="add-task-button"
+            onClick={handleCreateNewTask}
+          >
             <FiCheckSquare size={16} color="#fff"/>
           </button>
         </div>
